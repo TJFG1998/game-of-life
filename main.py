@@ -50,7 +50,7 @@ def draw(board):
     pygame.display.flip()
 
 
-def is_alive(GAME_BOARD, pos_x, pos_y) -> int:
+def is_alive(GAME_BOARD, pos_x, pos_y):
     alive = 0
     for x in range(pos_x-1, pos_y+2):
         for y in range(pos_y-1, pos_y+2):
@@ -93,21 +93,5 @@ def check_cells():
     except Exception as e:
         raise e
 
-
-def increase_matrix():
-    new = []
-    for i in range(0, SIZE):
-        new.append(0)
-
-    for row in GAME_BOARD:
-        row.insert(0, 0)
-        row.append(0)
-
-    GAME_BOARD.insert(0, new)
-    GAME_BOARD.append(new)
-
-
-# for i in range(20):
-#     check_cells()
 
 pygame.quit()
